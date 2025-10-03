@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Free SEO Tools website template for beginners. Includes core SEO tools, keyword explorer, meta tag generator, sitemap builder, and Google AdSense-ready spaces." />
+  <title>Free SEO Tools — Beginner Friendly</title>
+  <link rel="icon" href="data:;base64,iVBORw0KGgo=" />
+  <style>
+    :root{
+      --bg:#0f1724; --card:#0b1220; --muted:#94a3b8; --accent:#06b6d4; --glass: rgba(255,255,255,0.03);
+      --max-width:1150px;
+      --radius:14px;
+      color-scheme: dark;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;background:linear-gradient(180deg,#071021 0%, #071823 100%);color:#e6eef6;display:flex;justify-content:center;padding:20px}
+    .wrap{width:100%;max-width:var(--max-width)}
+
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 20px;background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:12px;margin-bottom:20px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:46px;height:46px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#8b5cf6);display:grid;place-items:center;font-weight:700;color:#04111a}
+    h1{font-size:20px;margin:0}
+    .tag{font-size:12px;color:var(--muted)}
+
+    nav{display:flex;gap:10px;align-items:center}
+    .btn{background:var(--glass);border:1px solid rgba(255,255,255,0.03);padding:8px 12px;border-radius:10px;color:inherit;text-decoration:none;font-size:14px}
+    .btn.primary{background:linear-gradient(90deg,var(--accent),#7c3aed);color:#021114;font-weight:600}
+
+    main{display:grid;grid-template-columns:1fr;gap:18px}
+
+    .hero{padding:18px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.02))}
+    .hero-grid{display:flex;flex-direction:column;gap:12px}
+    .hero p{margin:0;color:var(--muted)}
+
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
+
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:16px;border-radius:12px;border:1px solid rgba(255,255,255,0.02)}
+    .card h3{margin:0 0 8px 0}
+    .muted{color:var(--muted);font-size:13px}
+
+    label{display:block;font-size:13px;margin-bottom:6px}
+    input[type=text],textarea,select{width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.03);background:transparent;color:inherit}
+    textarea{min-height:120px;resize:vertical}
+    .row{display:flex;gap:10px}
+    .row > *{flex:1}
+
+    footer{margin-top:10px;color:var(--muted);font-size:13px;text-align:center}
+
+    /* Ad box */
+    .ad-box{background:rgba(255,255,255,0.04);border:1px dashed rgba(255,255,255,0.1);border-radius:10px;padding:12px;text-align:center;margin:10px 0;color:var(--muted);font-size:13px}
+
+    @media (max-width:880px){.row{flex-direction:column}}
+  </style>
+  <!-- Google AdSense Integration (replace ca-pub-XXXX with your ID) -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXX" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo">SEO</div>
+        <div>
+          <h1>Free SEO Tools</h1>
+          <div class="tag">Core Tools • Keywords Explorer • Beginner Friendly</div>
+        </div>
+      </div>
+      <nav>
+        <a class="btn" href="#tools">Tools</a>
+        <a class="btn" href="#ads">Ads</a>
+        <a class="btn primary" href="#about">About</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero card">
+        <div class="hero-grid">
+          <strong>Boost your website with free SEO tools.</strong>
+          <p class="muted">Use Core SEO tools, Keyword Explorer, Meta tag generator, and more. Fully responsive and monetization-ready with AdSense slots.</p>
+        </div>
+      </section>
+
+      <!-- Advertisement section (top banner) -->
+      <section id="ads" class="ad-box">
+        <!-- Google AdSense Code Example -->
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-XXXX"
+             data-ad-slot="1234567890"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        <p>Ad space — replace AdSense ID with yours</p>
+      </section>
+
+      <!-- Tools Section -->
+      <section id="tools" class="grid">
+        <div class="card">
+          <h3>Core SEO Analyzer</h3>
+          <div class="muted">Quickly analyze title, description length, and keyword usage.</div>
+          <label>Enter Content</label>
+          <textarea id="coreContent"></textarea>
+          <button class="btn primary" onclick="coreAnalyze()">Analyze</button>
+          <div id="coreOut" class="muted" style="margin-top:10px">Result appears here</div>
+        </div>
+
+        <div class="card">
+          <h3>Keyword Explorer</h3>
+          <div class="muted">Check keyword frequency in your content.</div>
+          <label>Keyword</label>
+          <input type="text" id="kwExp" placeholder="Type keyword" />
+          <label>Content</label>
+          <textarea id="kwExpContent"></textarea>
+          <button class="btn primary" onclick="kwExplore()">Explore</button>
+          <div id="kwExpOut" class="muted" style="margin-top:10px">Result appears here</div>
+        </div>
+
+        <div class="card">
+          <h3>Meta Tag Generator</h3>
+          <div class="muted">Generate optimized meta tags for SEO.</div>
+          <label>Title</label>
+          <input type="text" id="metaTitle" />
+          <label>Description</label>
+          <textarea id="metaDesc"></textarea>
+          <button class="btn primary" onclick="genMeta()">Generate</button>
+          <pre id="metaOut" class="muted" style="margin-top:10px;white-space:pre-wrap"></pre>
+        </div>
+      </section>
+
+      <!-- Another Ad section -->
+      <section class="ad-box">
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-XXXX"
+             data-ad-slot="0987654321"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        <p>Ad space — sidebar/mid-content</p>
+      </section>
+
+      <section id="about" class="card">
+        <h3>About</h3>
+        <p class="muted">This free SEO tools template is designed for beginners. It's responsive, SEO optimized, and includes integrated AdSense slots for monetization. Replace the AdSense client and slot IDs with your own to start earning. You can add more tools or pages as your project grows.</p>
+      </section>
+
+      <footer>
+        © 2025 Free SEO Tools Template — Built for learners. Fully customizable.
+      </footer>
+    </main>
+  </div>
+
+  <script>
+    function coreAnalyze(){
+      const text=document.getElementById('coreContent').value.trim();
+      if(!text){document.getElementById('coreOut').innerText='Please enter content.';return;}
+      const words=text.split(/\s+/).length;
+      document.getElementById('coreOut').innerText='Word count: '+words+'. Title/meta should be concise for SEO.';
+    }
+
+    function kwExplore(){
+      const kw=document.getElementById('kwExp').value.trim().toLowerCase();
+      const text=document.getElementById('kwExpContent').value.trim().toLowerCase();
+      if(!kw||!text){document.getElementById('kwExpOut').innerText='Please add keyword and content.';return;}
+      const count=(text.match(new RegExp(kw,'g'))||[]).length;
+      document.getElementById('kwExpOut').innerText=`Keyword "${kw}" appears ${count} time(s).`;
+    }
+
+    function genMeta(){
+      const t=document.getElementById('metaTitle').value;
+      const d=document.getElementById('metaDesc').value;
+      let out='';
+      if(t) out+=`<title>${t}</title>\n<meta property="og:title" content="${t}" />\n`;
+      if(d) out+=`<meta name="description" content="${d}" />\n<meta property="og:description" content="${d}" />\n`;
+      out+=`<meta name="viewport" content="width=device-width,initial-scale=1" />`;
+      document.getElementById('metaOut').innerText=out;
+    }
+  </script>
+</body>
+</html>
